@@ -1,0 +1,57 @@
+//
+//  File.swift
+//  
+//
+//  Created by Sébastien DAGUIN on 02/12/2022.
+//
+
+import Foundation
+
+public extension String {
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+    /// Returns an array of strings separated by a character
+     func splitString(with elem : String  ) -> [String] {
+        var stringToReturn : [String] = []
+        
+        if #available(macOS 13.0, *) {
+            let stringSplited = self.split(separator: elem)
+            for sequence in stringSplited {
+                let newString = String(sequence)
+                if !newString.isEmpty {
+                    stringToReturn.append(newString)
+                }
+            }
+            return stringToReturn
+        } else {
+            // Fallback on earlier versions
+            return stringToReturn
+        }
+    }
+    /// A function that returns a word with only letters
+    var clearWord: String {
+        var newWord : [Character] = []
+        for letter in self {
+            if letter.isLetter {
+                newWord.append(letter)
+            }
+        }
+        return String(newWord)
+    }
+    /// Check if string contains a number and return a bolean
+    var containsAnumber: Bool {
+        for character in self {
+            if character.isNumber {
+                return true
+            }
+        }
+        return false
+    }
+}
+
+public extension Array {
+    var isNotEmpty: Bool {
+        return !self.isEmpty
+    }
+}
