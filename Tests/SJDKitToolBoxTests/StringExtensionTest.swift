@@ -10,9 +10,9 @@ final class SJDKitToolBoxTests: XCTestCase {
         XCTAssertEqual(sliptedString.count, 7)
     }
     func test2() {
-        let string = "Lundi, Mardi, Mecredi, Jeudi, Vendredi, Samedi, Dimanche, "
-        
-        XCTAssertTrue(string.isNotEmpty)
+//        let string = "Lundi, Mardi, Mecredi, Jeudi, Vendredi, Samedi, Dimanche, ".splitString(with: ",")
+//        XCTAssertEqual(string.count, 7)
+//        XCTAssertTrue(string.isNotEmpty)
     }
     func test3() {
         let string = "Lun7di".clearWord

@@ -12,19 +12,18 @@ public extension String {
         return !self.isEmpty
     }
     /// Returns an array of strings separated by a character
-     func splitString(with elem : String  ) -> [String] {
+    func splitString(with elem : String  ) -> [String] {
         var stringToReturn : [String] = []
         
         if #available(macOS 13.0, *) {
             let stringSplited = self.split(separator: elem)
             for sequence in stringSplited {
                 let newString = String(sequence)
-                if !newString.isEmpty {
-                    stringToReturn.append(newString)
-                }
+                stringToReturn.append(newString)
             }
             return stringToReturn
-        } else {
+        }
+        else {
             // Fallback on earlier versions
             return stringToReturn
         }
