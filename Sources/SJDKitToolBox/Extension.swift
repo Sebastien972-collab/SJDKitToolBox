@@ -15,7 +15,7 @@ public extension String {
     func splitString(with elem : String  ) -> [String] {
         var stringToReturn : [String] = []
         
-        if #available(macOS 13.0, *) {
+        if #available(iOS 16.0, *) {
             let stringSplited = self.split(separator: elem)
             for sequence in stringSplited {
                 let newString = String(sequence)
